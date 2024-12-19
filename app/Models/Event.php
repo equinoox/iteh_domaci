@@ -14,5 +14,4 @@ class Event extends Model
         'user_id',
         'task_id',
     ];
-
 }
