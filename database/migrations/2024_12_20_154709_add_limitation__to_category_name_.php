@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->foreignId('category_id')->references('id')->on('category')->onDelete('set null');
+        Schema::table('category_name_', function (Blueprint $table) {
+            $table->string('name')->unique()->change();
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task');
+        Schema::table('category_name_', function (Blueprint $table) {
+            $table->string('name')->change();
+        });
     }
 };
