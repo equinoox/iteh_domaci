@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->foreignId('category_id')->references('id')->on('category')->onDelete('set null');
+            $table->foreignId('category_id')->references('id')->on('category');
         });
     }
 

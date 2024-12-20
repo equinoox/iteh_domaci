@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tasks', function (Blueprint $table) {
+        Schema::table('task', function (Blueprint $table) {
             $table->integer('priority')->default(0)->after('title');
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tasks', function (Blueprint $table) {
+        Schema::table('task', function (Blueprint $table) {
             $table->dropColumn('priority');
         });
     }
